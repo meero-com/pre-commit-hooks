@@ -1,0 +1,37 @@
+# Local .terraform directories
+*.terraform
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .terraform.lock
+*.terraform.lock.hcl
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Ignore python caches
+**/__pycache__
+.pytest_cache
+
+## Mac OS
+.DS_Store
+
+# Editors and IDE's #
+#####################
+
+## JetBrains
+/.idea
+
+## SublimeText
+/.phpintel/
+
+## NetBeans
+/nbproject/private/
+/PhpProject1/nbproject/private/
+
+## VScode
+/.vscode

@@ -1,0 +1,118 @@
+{
+  "name": "semantic_release_modules",
+  "private": true,
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits",
+          "releaseRules": [
+            {
+              "type": "ci",
+              "release": "patch"
+            },
+            {
+              "type": "build",
+              "release": "patch"
+            },
+            {
+              "type": "perf",
+              "release": "patch"
+            }
+          ]
+        }
+      ],
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "preset": "conventionalcommits",
+          "presetConfig": {
+            "types": [
+              {
+                "type": "feat",
+                "section": "Features"
+              },
+              {
+                "type": "feature",
+                "section": "Features"
+              },
+              {
+                "type": "fix",
+                "section": "Bug Fixes"
+              },
+              {
+                "type": "perf",
+                "section": "Performance Improvements"
+              },
+              {
+                "type": "revert",
+                "section": "Reverts"
+              },
+              {
+                "type": "chore",
+                "section": "Miscellaneous Chores"
+              },
+              {
+                "type": "refactor",
+                "section": "Code Refactoring"
+              },
+              {
+                "type": "docs",
+                "section": "Documentation",
+                "hidden": true
+              },
+              {
+                "type": "style",
+                "section": "Styles",
+                "hidden": true
+              },
+              {
+                "type": "test",
+                "section": "Tests",
+                "hidden": true
+              },
+              {
+                "type": "build",
+                "section": "Build System",
+                "hidden": true
+              },
+              {
+                "type": "ci",
+                "section": "Continuous Integration",
+                "hidden": true
+              }
+            ]
+          }
+        }
+      ],
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "CHANGELOG.md"
+          ],
+          "message": "release: ${nextRelease.version} \n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "github:semantic-release/changelog",
+    "@semantic-release/git": "github:semantic-release/git",
+    "semantic-release": "^19.0.3"
+  },
+  "version": "2.2.0"
+}
