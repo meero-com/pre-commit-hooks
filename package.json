@@ -114,5 +114,5 @@
     "@semantic-release/git": "github:semantic-release/git",
     "semantic-release": "^19.0.3"
   },
-  "version": "2.2.0"
+  "version": "1.0.0"
 }
