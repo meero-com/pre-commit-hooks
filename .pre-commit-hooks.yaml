@@ -1,0 +1,5 @@
+-   id: copy-files
+    name: copy files
+    description: Copy and rename files based on regex
+    entry: copy-files
+    language: python
